@@ -1,0 +1,20 @@
+formulas(assumptions).
+
+    Truth(Quinn) <-> Family(Quinn, Turner).
+    Truth(Ralph) <-> Family(Ralph, Turner).
+    Truth(Steve) <-> Family(Steve, Turner).
+
+    Family(Quinn, Lerner) <-> -Truth(Quinn).
+    Family(Ralph, Lerner) <-> -Truth(Ralph).
+    Family(Steve, Lerner) <-> -Truth(Steve).
+
+    ((Family(Quinn, Turner) & Family(Ralph, Lerner) & Family(Steve, Lerner))
+        | (Family(Quinn, Turner) & Family(Ralph, Lerner) & Family(Steve, Turner))) |
+    ((Family(Quinn, Lerner) & Family(Ralph, Lerner) & Family(Steve, Lerner)) |
+        (Family(Quinn, Lerner) & Family(Ralph, Lerner) & Family(Steve, Turner))).
+
+end_of_list.
+
+formulas(goals).
+    Family(Ralph, Lerner).
+end_of_list.

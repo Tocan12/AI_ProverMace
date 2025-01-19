@@ -1,0 +1,36 @@
+set(arithmetic).  
+
+list(distinct).
+    [Dane, German, Brit, Swede, Norwegian].
+    [Red, Green, Yellow, White, Blue].
+    [Tea, Milk, Coffee, Beer, Water].
+    [Dunhill, Bluemasters, Prince, PallMall, Blends].
+    [Fish, Dog, Horse, Cat, Bird].
+end_of_list.
+
+formulas(utils).
+    RightOf(x,y) <-> x + 1 = y.
+    LeftOf(x,y)  <-> x = y + 1.
+    NextTo(x,y) <-> RightOf(x,y) | LeftOf(x,y).
+end_of_list.
+
+formulas(assumptions).
+    
+    Brit = Red.
+    Swede = Dog.
+    Dane = Tea.
+    LeftOf(White, Green).
+    Green = Coffee.
+    PallMall = Birds.
+    Yellow = Dunhill.
+    Milk = 2.
+    Norwegian = 0.
+    NextTo(Blends, Cat).
+    NextTo(Horse, Dunhill).
+    Bluemasters = Beer.
+    German = Prince.
+    NextTo(Norwegian, Blue).
+    NextTo(Blends, Water).
+
+end_of_list.
+

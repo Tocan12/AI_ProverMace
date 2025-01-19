@@ -1,0 +1,20 @@
+set(arithmetic).
+
+list(distinct).
+   [Al, Ben, Carl, Dan].
+end_of_list.
+
+formulas(assumptions).
+
+   Truth(Al) <-> Thief(Ben).
+   Truth(Ben) <-> Thief(Dan).
+   Truth(Carl) <-> -Thief(Carl).
+   Truth(Dan) <-> -Truth(Ben).
+
+   exists x (Thief(x) & all y (Thief(y) -> y = x)).
+
+   (Truth(Al) & Truth(Ben) & Truth(Carl) & -Truth(Dan)) |
+   (Truth(Al) & Truth(Ben) & -Truth(Carl) & Truth(Dan)) |
+   (Truth(Al) & -Truth(Ben) & Truth(Carl) & Truth(Dan)) |
+   (-Truth(Al) & Truth(Ben) & Truth(Carl) & Truth(Dan)). 
+end_of_list.
